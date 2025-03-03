@@ -59,6 +59,9 @@ Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallb
     ->middleware(['guest'])
     ->name('callback');
 
+
+Route::get('/search', [Controller::class, 'search'])->name('search');
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');

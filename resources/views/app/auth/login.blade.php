@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobat-tangsel Login Form</title>
+  <title>Lajur Info Login Form</title>
   <link rel="stylesheet" href="{{ asset('app/css/login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
   <div class="wrapper">
     <form action="{{ route('login.submit') }}" method="post">
     @csrf
-    <h2>Sistem Informasi Tembok Berita</h2>
+    <h2>Sistem Informasi Lajur Info</h2>
     <div class="input-field">
         <input type="email" name="email" required>
         <label>Masukkan Email</label>

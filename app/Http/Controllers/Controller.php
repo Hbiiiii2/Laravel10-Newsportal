@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
-use App\Models\Category;
 use App\Models\Post;
+use App\Models\About;
 use App\Models\Video;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -120,4 +121,30 @@ class Controller extends BaseController
             'latest_posts' => $latest_posts,
         ]);
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+    
+    $searchResults = Post::where(function($q) use ($query) {
+            $q->where('title', 'LIKE', "%{$query}%")
+              ->orWhere('body', 'LIKE', "%{$query}%")
+              ->orWhere('slug', 'LIKE', "%{$query}%");
+        })
+        ->orWhereHas('category', function($q) use ($query) {
+            $q->where('name', 'LIKE', "%{$query}%");
+        })
+        ->latest()
+        ->paginate(6);
+
+    $breakingNews = Post::whereHas('breakingNews')->get();
+    $latest_posts = Post::latest()->take(6)->get();
+
+    return view('home.search', [
+        'posts' => $searchResults,
+        'query' => $query,
+        'breakingNews' => $breakingNews,
+        'latest_posts' => $latest_posts,
+    ]);
+}
 }
