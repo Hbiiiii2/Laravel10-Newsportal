@@ -154,7 +154,7 @@
                                 <div class="tab-pane fade" id="nav-{{ $category->id }}" role="tabpanel"
                                     aria-labelledby="nav-{{ $category->id }}-tab">
                                     <div class="row">
-                                        @foreach ($category->posts->take(100) as $news)
+                                        @foreach ($category->posts->take(12) as $news)
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="news-card mb-4">
                                                     <div class="news-img">
@@ -239,8 +239,64 @@
         <!-- Whats New End -->
 
 
+        {{-- Berita Terbaru --}}
+        <section class="whats-news-area pt-50 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Header Kategori -->
+                        <div class="category-header mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-3 col-md-3">
+                                    <div class="section-tittle">
+                                        <h3 class="fw-bold">Terbaru</h3>
+                                    </div>
+                                </div>
 
-    
+                            </div>
+                        </div>
+
+                        <!-- Konten Tab -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- Tab Semua Berita -->
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <div class="row">
+                                    @foreach ($allNews->take(12) as $news)
+                                        <div class="col-lg-4 col-md-6">
+                                            <div class="news-card mb-4">
+                                                <div class="news-img">
+                                                    <img src="{{ $news->image }}" alt="{{ $news->title }}"
+                                                        class="img-fluid">
+                                                </div>
+                                                <div class="news-content p-3">
+                                                    <div class="news-meta mb-2">
+                                                        <span class="category-badge">{{ $news->category->name }}</span>
+                                                        <span
+                                                            class="date-badge">{{ $news->created_at->format('d F Y') }}</span>
+                                                    </div>
+                                                    <h5 class="news-title">
+                                                        <a href="{{ route('posts.show', $news->slug) }}">
+                                                            {{ Str::limit($news->title, 50, '...') }}
+                                                        </a>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+                            <!-- Tab Kategori -->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
         <!-- Start Youtube -->
 
         @if (count($videos) >= 6)

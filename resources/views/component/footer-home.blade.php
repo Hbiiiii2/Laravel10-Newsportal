@@ -9,7 +9,7 @@
                             <div class="single-footer-caption">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="/"><img src="{{ asset('home/img/logo/logo-header.svg') }}" style="filter: invert(100%); width: 200px;" alt=""></a>
+                                    <a href="/"><img src="{{ asset('home/img/logo/logo-header.svg') }}" style="width: 200px;" alt=""></a>
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
