@@ -38,16 +38,173 @@
                             </div>
                         </div>
                         <div class="social-share pt-30">
-                            <div class="section-title">
-                                <h3 class="mr-20">Share:</h3>
-                                <ul class="d-flex list-unstyled">
-                                    <li class="mr-3"><a href="#"><img src="{{ asset('home/img/news/icon-ins.png') }}" alt="Instagram"></a></li>
-                                    <li class="mr-3"><a href="#"><img src="{{ asset('home/img/news/icon-fb.png') }}" alt="Facebook"></a></li>
-                                    <li class="mr-3"><a href="#"><img src="{{ asset('home/img/news/icon-tw.png') }}" alt="Twitter"></a></li>
-                                    <li class="mr-3"><a href="#"><img src="{{ asset('home/img/news/icon-yo.png') }}" alt="YouTube"></a></li>
+                            <div class="section-title d-flex align-items-center">
+                                <h3 class="mr-20 mb-0">Share:</h3>
+                                <ul class="d-flex list-unstyled mb-0">
+                                    <!-- Facebook Share -->
+                                    <li class="mr-2">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}&quote={{ urlencode($post->title) }}" 
+                                           target="_blank" 
+                                           class="share-link"
+                                           title="Share on Facebook">
+                                            <div class="social-icon facebook">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    
+                                    <!-- WhatsApp Share -->
+                                    <li class="mr-2">
+                                        <a href="https://wa.me/?text={{ urlencode($post->title . ' ' . url()->current()) }}" 
+                                           target="_blank" 
+                                           class="share-link"
+                                           title="Share on WhatsApp">
+                                            <div class="social-icon whatsapp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                        
+                                    <!-- Instagram Share -->
+                                    <li class="mr-2">
+                                        <a href="https://www.instagram.com/sharer.php?u={{ urlencode(url()->current()) }}" 
+                                           target="_blank" 
+                                           class="share-link"
+                                           title="Share on Instagram">
+                                            <div class="social-icon instagram">
+                                                <i class="fab fa-instagram"></i>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
+                        
+                        <style>
+                        .social-share {
+                            background: #fff;
+                            border-radius: 8px;
+                            padding: 15px 0;
+                        }
+                        
+                        .social-share .section-title {
+                            margin-bottom: 0;
+                        }
+                        
+                        .social-share h3 {
+                            color: #333;
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                        
+                        .social-icon {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #fff;
+                            transition: all 0.3s ease;
+                        }
+                        
+                        .social-icon i {
+                            font-size: 16px;
+                        }
+                        
+                        /* Facebook */
+                        .social-icon.facebook {
+                            background: #1877f2;
+                            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2);
+                        }
+                        
+                        .social-icon.facebook:hover {
+                            background: #0d6efd;
+                            transform: translateY(-2px);
+                        }
+                        
+                        /* WhatsApp */
+                        .social-icon.whatsapp {
+                            background: #25d366;
+                            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+                        }
+                        
+                        .social-icon.whatsapp:hover {
+                            background: #20ba5a;
+                            transform: translateY(-2px);
+                        }
+                        
+                        /* Instagram */
+                        .social-icon.instagram {
+                            background: #e4405f;
+                            box-shadow: 0 4px 12px rgba(228, 64, 95, 0.2);
+                        }
+                        
+                        .social-icon.instagram:hover {
+                            background: #d63154;
+                            transform: translateY(-2px);
+                        }
+                        
+                        /* Shared hover effects */
+                        .share-link {
+                            display: block;
+                            position: relative;
+                        }
+                        
+                        .share-link:hover {
+                            text-decoration: none;
+                        }
+                        
+                        .share-link:active .social-icon {
+                            transform: translateY(0);
+                        }
+                        
+                        /* Responsive adjustments */
+                        @media (max-width: 576px) {
+                            .social-share .section-title {
+                                flex-direction: column;
+                                align-items: flex-start;
+                            }
+                        
+                            .social-share h3 {
+                                margin-bottom: 10px;
+                            }
+                        
+                            .social-icon {
+                                width: 35px;
+                                height: 35px;
+                            }
+                        
+                            .social-icon i {
+                                font-size: 14px;
+                            }
+                        }
+                        </style>
+                        
+                        @push('scripts')
+                        <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const shareLinks = document.querySelectorAll('.share-link');
+                            
+                            shareLinks.forEach(link => {
+                                link.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    
+                                    const width = 600;
+                                    const height = 400;
+                                    const left = (window.innerWidth - width) / 2;
+                                    const top = (window.innerHeight - height) / 2;
+                                    
+                                    window.open(
+                                        this.href,
+                                        'share',
+                                        `width=${width},height=${height},top=${top},left=${left},toolbar=0,status=0,menubar=0`
+                                    );
+                                });
+                            });
+                        });
+                        </script>
+                        @endpush
                     </div>
 
                     <!-- Comments Section -->

@@ -26,7 +26,7 @@ class Controller extends BaseController
 
         $thirdPosts = Post::whereNotIn('id', $excludedIds)
             ->orderBy('created_at', 'desc')
-            ->take(5)
+            ->take(4)
             ->get();
 
 
