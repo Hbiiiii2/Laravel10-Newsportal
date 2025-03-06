@@ -125,7 +125,7 @@
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
                                 aria-labelledby="nav-home-tab">
                                 <div class="row">
-                                    @foreach ($allNews->take(12) as $news)
+                                    @foreach ($allNews->take(6) as $news)
                                         <div class="col-lg-6 col-md-6">
                                             <div class="news-card mb-4">
                                                 <div class="news-img">
@@ -154,7 +154,7 @@
                                 <div class="tab-pane fade" id="nav-{{ $category->id }}" role="tabpanel"
                                     aria-labelledby="nav-{{ $category->id }}-tab">
                                     <div class="row">
-                                        @foreach ($category->posts->take(12) as $news)
+                                        @foreach ($category->posts->take(6) as $news)
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="news-card mb-4">
                                                     <div class="news-img">
