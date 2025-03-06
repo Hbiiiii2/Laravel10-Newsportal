@@ -18,14 +18,7 @@
               <img class="sidebar-brand-logomini" src="{{ asset('home/img/logo/logo-tb.svg') }}" alt="" />
               <div class="small font-weight-light pt-1">Elementary Dashboard</div>
             </a>
-            <form class="d-flex align-items-center" action="#">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
-                </div>
-                <input type="text" class="form-control border-0" placeholder="Search" />
-              </div>
-            </form>
+           
           </li>
           <li class="pt-2 pb-1">
             <span class="nav-item-head">Side Bar</span>
