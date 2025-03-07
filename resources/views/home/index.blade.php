@@ -291,9 +291,88 @@
                         </div>
                     </div>
 
+                    <div class="col-lg-4">
+                        <!-- Section Tittle -->
+                        <div class="popular-news mb-45">
+                            <div class="section-title mb-30">
+                                <h3>Berita Terpopuler</h3>
+                            </div>
+                            <div class="popular-news-list">
+                                @foreach ($mostViews as $mostView)
+                                    <div class="single-popular-news mb-3">
+                                        <div class="d-flex">
+                                            <div class="popular-news-img mr-3">
+                                                <img src="{{ $mostView->image }}" alt="{{ $mostView->title }}"
+                                                    style="width: 100px; height: 70px; object-fit: cover; border-radius: 8px;">
+                                            </div>
+                                            <div class="popular-news-content">
+                                                <h5 class="mb-1">
+                                                    <a href="{{ route('posts.show', $mostView->slug) }}" class="text-dark">
+                                                        {{ Str::limit($mostView->title, 50) }}
+                                                    </a>
+                                                </h5>
+                                                <div class="news-meta">
+                                                    <span class="mr-2">
+                                                        <i class="fas fa-eye"></i> {{ $mostView->views }} views
+                                                    </span>
+                                                    <span>
+                                                        <i class="far fa-clock"></i>
+                                                        {{ $mostView->created_at->diffForHumans() }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
 
-                </div>
-            </div>
+                        <!-- New Poster -->
+                        <div class="news-poster d-none d-lg-block">
+                            <img src="{{ asset('home/img/news/news_card.jpg') }}" alt="">
+                        </div>
+
+                        <style>
+                            .popular-news-list {
+                                background: #fff;
+                                padding: 15px;
+                                border-radius: 10px;
+                                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                            }
+
+                            .single-popular-news {
+                                transition: all 0.3s ease;
+                                padding: 10px;
+                                border-bottom: 1px solid #eee;
+                            }
+
+                            .single-popular-news:last-child {
+                                border-bottom: none;
+                            }
+
+                            .single-popular-news:hover {
+                                background: #f8f9fa;
+                            }
+
+                            .popular-news-content h5 {
+                                font-size: 14px;
+                                line-height: 1.4;
+                            }
+
+                            .popular-news-content h5 a:hover {
+                                color: #007bff !important;
+                                text-decoration: none;
+                            }
+
+                            .news-meta {
+                                font-size: 12px;
+                                color: #6c757d;
+                            }
+
+                            .news-meta i {
+                                font-size: 11px;
+                            }
+                        </style>
         </section>
 
 

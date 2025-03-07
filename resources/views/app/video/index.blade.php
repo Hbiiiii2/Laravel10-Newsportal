@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script>
+{{-- <script>
     // Tambahkan script ini di awal content
     window.onload = function() {
         Swal.fire({
@@ -11,7 +11,7 @@
             confirmButtonText: 'Mengerti'
         });
     }
-</script>
+</script> --}}
 
 <div class="content-wrapper">
 <div class="content-wrapper">
