@@ -2,29 +2,7 @@
     <!-- Header Start -->
     <div class="header-area">
         <div class="main-header ">
-            <div class="header-top black-bg d-none d-md-block">
-                <div class="container">
-                    <div class="col-xl-12">
-                        <div class="row d-flex justify-content-between align-items-center">
-                            <div class="header-info-left">
-                                <ul>
-                                    <li><a href="https://www.instagram.com/sobattangsel/" target="_blank"><i
-                                                class="fab fa-instagram"></i></a> sobattangsel </li>
-                                    {{-- <li><a href="https://api.whatsapp.com/send?phone=6282338520959" target="_blank"><i class="fab fa-whatsapp"></i></a> +62 823 3852 0959</li> --}}
-                                </ul>
-                            </div>
-                            <div class="header-info-right">
-                                <ul class="header-social">
-                                    {{-- <li><a href="https://api.whatsapp.com/send?phone=6282338502959" target="_blank" ><i style="color: #fff;" class="fab fa-whatsapp"></i></a></li> --}}
-                                    <li><a href="https://www.instagram.com/sobattangsel/" target="_blank"><i
-                                                style="color: #fff;" class="fab fa-instagram"></i></a></li>
-                                    {{-- <li><a href="https://t.me/irhamkaraman" target="_blank" ><i style="color: #fff;" class="fab fa-telegram"></i></a></li> --}}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="header-mid d-none d-md-block">
                 <div class="container">
                     <div class="row d-flex align-items-center">

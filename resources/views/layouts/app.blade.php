@@ -89,7 +89,7 @@
     <script>
       tinymce.init({
           selector: 'textarea#description, textarea#body, textarea#postBody',
-          plugins: 'code table lists link',
+          plugins: 'code table lists link image',
           toolbar: [
               // Baris 1
               {
