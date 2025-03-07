@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'title' => 'required|max:50',
+            'title' => 'required|max:200',
             'body' => 'required|max:5000',
             'category_id' => 'required'
         ]);

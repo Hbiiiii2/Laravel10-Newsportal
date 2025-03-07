@@ -34,9 +34,10 @@
                                     <i class="fas fa-eye mr-2"></i>
                                     <p class="card-text mb-0"><span class="font-weight-bold">Views:</span> {{ $post->views }}</p>
                                 </div>
-                                <p class="card-text mt-3">{!! $post->body !!}</p>
+                                <p class="card-text mt-3" style="">{!! $post->body !!}</p>
                             </div>
                         </div>
+                    
                         <div class="social-share pt-30">
                             <div class="section-title d-flex align-items-center">
                                 <h3 class="mr-20 mb-0">Share:</h3>

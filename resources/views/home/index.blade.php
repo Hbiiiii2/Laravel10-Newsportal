@@ -277,7 +277,7 @@
                                                     </div>
                                                     <h5 class="news-title">
                                                         <a href="{{ route('posts.show', $news->slug) }}">
-                                                            {{ Str::limit($news->title, 50, '...') }}
+                                                            {{ Str::limit($news->title, 80, '...') }}
                                                         </a>
                                                     </h5>
                                                 </div>
