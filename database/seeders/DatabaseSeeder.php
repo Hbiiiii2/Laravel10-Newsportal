@@ -32,18 +32,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        $categories = ['Berita', 'Olahraga', 'Politik', 'Hiburan', 'Kesehatan', 'Kultural'];
-        foreach ($categories as $category) {
-            Category::factory()->create([
-                'name' => $category
-            ]);
-        }
+        // $categories = ['Berita', 'Olahraga', 'Politik', 'Hiburan', 'Kesehatan', 'Kultural'];
+        // foreach ($categories as $category) {
+        //     Category::factory()->create([
+        //         'name' => $category
+        //     ]);
+        // }
 
-        $user = User::first();
-        for ($i = 0; $i < 10; $i++) {
-            Post::factory()->create([
-                'user_id' => $user->id
-            ]);
-        }
+        // $user = User::first();
+        // for ($i = 0; $i < 10; $i++) {
+        //     Post::factory()->create([
+        //         'user_id' => $user->id
+        //     ]);
+        // }
     }
 }
