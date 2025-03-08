@@ -45,7 +45,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('mysql://root:YVEugxNEDgbWjkmAKulXMlYmMIDQmMoG@mysql-dcae2a45.railway.internal:3306/'),
+            'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'mysql-dcae2a45.railway.internal'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'railway'),
